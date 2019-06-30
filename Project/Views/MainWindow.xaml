@@ -9,18 +9,9 @@
     <Grid x:Name="WindowGrid">
         <!-- background -->
         <Image x:Name="Bg" Source="pack://siteoforigin:,,,/data/images/bg.png" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="730"/>
-
-        <!-- message grid -->
-        <Grid HorizontalAlignment="Left" Height="86.4" VerticalAlignment="Top" Width="220">
-            <!-- error message -->
-            <!--
-            <Grid x:Name="ErrorGrid" HorizontalAlignment="Left" Height="49.884" VerticalAlignment="Top" Width="495.824" d:IsHidden="True">
-                <Image x:Name="ErrorBg" Source="pack://siteoforigin:,,,/data/images/bg_error.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="49.884" VerticalAlignment="Top" Width="219.824"/>
-                <Image x:Name="ErrorIcon" Source="pack://siteoforigin:,,,/data/images/icon_error.png" HorizontalAlignment="Left" Height="34.455" VerticalAlignment="Top" Width="41.647" RenderTransformOrigin="0.635,0.679" Margin="10,10,0,0"/>
-                <Label x:Name="ErrorMessage" Content="An error occured" HorizontalAlignment="Left" Margin="56.647,10,0,0" VerticalAlignment="Top" Width="429.177" Height="34.455" Foreground="White" FontSize="16"/>
-            </Grid>
-            -->
-        </Grid>
+        <Image x:Name="BgAlpha" Source="pack://siteoforigin:,,,/data/images/bg_alpha.png" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="730"/>
+        
+        <!-- message -->
 
         <!-- settings -->
         <Label Content="Email" HorizontalAlignment="Left" Margin="306.8,90.4,0,0" VerticalAlignment="Top" Foreground="White" Height="25.6"/>
@@ -36,7 +27,7 @@
 
         <!-- start buttons -->
         <Button Content="Start Server" HorizontalAlignment="Left" Margin="503.593,394.6,0,0" VerticalAlignment="Top" Width="131" Height="32.8" Click="OnStartServer" FontSize="16" Background="#FF404040" Foreground="#FFDDDDDD" BorderBrush="#FFABADB3"/>
-        <Button Content="Start Game" HorizontalAlignment="Left" Margin="317.193,394.6,0,0" VerticalAlignment="Top" Width="131" Height="32.8" Click="OnStartGame" FontSize="16" Background="#FF404040" Foreground="#FFDDDDDD" BorderBrush="#FFABADB3"/>
+        <Button Content="Start Game" HorizontalAlignment="Left" Margin="306.8,394.6,0,0" VerticalAlignment="Top" Width="131" Height="32.8" Click="OnStartGame" FontSize="16" Background="#FF404040" Foreground="#FFDDDDDD" BorderBrush="#FFABADB3"/>
 
     </Grid>
 </Window>
