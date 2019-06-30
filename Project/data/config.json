@@ -1,0 +1,7 @@
+﻿{
+	"email": "user1@emutarkov.com",
+	"password": "password",
+	"gameLocation": "C:\\Games\\EmuTarkov\\Game",
+	"serverLocation": "C:\\Games\\EmuTarkov\\Server",
+	"backendURL": "http://localhost:1337"
+}
