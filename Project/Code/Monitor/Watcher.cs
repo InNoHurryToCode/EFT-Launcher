@@ -8,6 +8,7 @@ namespace Launcher.Code.Monitor
     {
         private string executable = "";
         private Timer monitor = null;
+        public bool processAlive = false;
 
         public Watcher(string executable)
         {
@@ -23,16 +24,15 @@ namespace Launcher.Code.Monitor
         {
             Process[] activeProcesses = Process.GetProcessesByName(executable);
 
-            if (activeProcesses.Length == 0)
+            if (activeProcesses.Length > 0)
+            {
+                processAlive = true;
+            }
+            else
             {
                 monitor.Enabled = false;
-                OnProcessClose();
+                processAlive = false;
             }
-        }
-
-        protected void OnProcessClose()
-        {
-            // code here
         }
     }
 }

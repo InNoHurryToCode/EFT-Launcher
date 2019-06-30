@@ -14,10 +14,16 @@ namespace Launcher.Code.Starter
         {
             this.filepath = filepath;
             this.executable = executable;
+            watcher = new Watcher(executable);
         }
 
-        protected virtual void Start()
+        protected void Start()
         {
+            if (watcher.processAlive)
+            {
+                return;
+            }
+
             ProcessStartInfo process = new ProcessStartInfo();
             process.FileName = Path.Combine(filepath, executable);
 
@@ -25,8 +31,6 @@ namespace Launcher.Code.Starter
             {
                 Process gameProcess = Process.Start(process);
             }
-
-            watcher = new Watcher(executable);
         }
     }
 }
