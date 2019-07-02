@@ -11,22 +11,7 @@
         <Image x:Name="Bg" Source="pack://siteoforigin:,,,/data/images/bg.png" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="730"/>
         <Image x:Name="BgAlpha" Source="pack://siteoforigin:,,,/data/images/bg_alpha.png" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="730"/>
 
-        <!-- message -->
-        <!-- code here -->
-
-        <!-- settings -->
-        <Label Content="Email" HorizontalAlignment="Left" Margin="306.8,90.4,0,0" VerticalAlignment="Top" Foreground="White" Height="25.6"/>
-        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="306.8,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Background="#FF404040" Foreground="#FFDDDDDD" TextChanged="OnChangeEmail"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="306.8,158.4,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="306.8,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Background="#FF404040" Foreground="#FFDDDDDD" TextChanged="OnChangePassword"/>
-        <Label Content="Game Location" HorizontalAlignment="Left" Margin="486.8,90.4,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="GameLocation" HorizontalAlignment="Left" Height="23" Margin="486.8,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Background="#FF404040" Foreground="#FFDDDDDD" TextChanged="OnChangeGameLocation"/>
-        <Label Content="Server location" HorizontalAlignment="Left" Margin="486.8,158.4,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="ServerLocation" HorizontalAlignment="Left" Height="23" Margin="486.8,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Background="#FF404040" Foreground="#FFDDDDDD" TextChanged="OnChangeServerLocation"/>
-        <Label Content="Backend URL" HorizontalAlignment="Left" Margin="486.8,226.4,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="BackendURL" HorizontalAlignment="Left" Height="23" Margin="486.8,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" Background="#FF404040" Foreground="#FFDDDDDD" TextChanged="OnChangeBackendURL"/>
-
-        <!-- start buttons -->
+        <!-- menu bar -->
         <Button Content="Start Server" HorizontalAlignment="Left" Margin="503.593,394.6,0,0" VerticalAlignment="Top" Width="131" Height="32.8" Click="OnStartServer" FontSize="16" Background="#FF404040" Foreground="#FFDDDDDD" BorderBrush="#FFABADB3"/>
         <Button Content="Start Game" HorizontalAlignment="Left" Margin="306.8,394.6,0,0" VerticalAlignment="Top" Width="131" Height="32.8" Click="OnStartGame" FontSize="16" Background="#FF404040" Foreground="#FFDDDDDD" BorderBrush="#FFABADB3"/>
         <DockPanel Margin="221.023,0,0,417.489">
@@ -40,5 +25,38 @@
                 <MenuItem Header="Settings" FontSize="12" Foreground="#FFDDDDDD" Background="#FF404040" Click="OnSettings" />
             </Menu>
         </DockPanel>
+
+        <!-- app grid -->
+        <Grid x:Name="AppGrid" HorizontalAlignment="Left" Height="342.233" VerticalAlignment="Top" Width="502.177" RenderTransformOrigin="3.188,1.039" Margin="221.023,32.911,0,0">
+            <!-- account grid -->
+            <Grid x:Name="LoginGrid" HorizontalAlignment="Left" Height="342.233" VerticalAlignment="Top" Width="502.177" d:IsHidden="True">
+                <!-- email -->
+                <Label Content="Email" HorizontalAlignment="Left" Margin="147.162,42.4,0,0" VerticalAlignment="Top" Width="200" Foreground="#FFDDDDDD"/>
+                <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Margin="147.162,68,0,0" Foreground="#FFDDDDDD" Background="#FF404040" TextChanged="OnChangeEmail" />
+
+                <!-- password -->
+                <Label Content="Password" HorizontalAlignment="Left" Margin="147.162,117.4,0,0" VerticalAlignment="Top" Width="200" Foreground="#FFDDDDDD"/>
+                <TextBox x:Name="Password" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Margin="147.558,143,0,0" Foreground="#FFDDDDDD" Background="#FF404040" TextChanged="OnChangePassword" />
+
+                <!-- backendurl -->
+                <Label Content="BackendURL" HorizontalAlignment="Left" Margin="147.162,191.212,0,0" VerticalAlignment="Top" Width="200" Foreground="#FFDDDDDD"/>
+                <TextBox x:Name="ClientBackendURL" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Margin="147.162,216.815,0,0" Foreground="#FFDDDDDD" Background="#FF404040" TextChanged="OnChangeClientBackendURL" />
+
+                <!-- buttons -->
+                <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="147.558,272.332,0,0" VerticalAlignment="Top" Width="75" Foreground="#FFDDDDDD" Background="#FF404040" BorderBrush="#FFABADB3" Click="OnLogin" />
+                <Button x:Name="RegisterMeu" Content="Register" HorizontalAlignment="Left" Margin="241.325,272.332,0,0" VerticalAlignment="Top" Width="75" Foreground="#FFDDDDDD" Background="#FF404040" BorderBrush="#FFABADB3" Click="OnRegisterMenu" />
+            </Grid>
+
+            <!-- settings grid -->
+            <Grid x:Name="SettingsGrid" HorizontalAlignment="Left" Height="342.233" VerticalAlignment="Top" Width="502.177">
+                <!-- game location -->
+                <Label Content="Game location" HorizontalAlignment="Left" Margin="147.558,101.798,0,0" VerticalAlignment="Top" Width="200" Foreground="#FFDDDDDD"/>
+                <TextBox x:Name="GameLocation" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Margin="147.162,127.4,0,0" Foreground="#FFDDDDDD" Background="#FF404040" TextChanged="OnChangeGameLocation" />
+
+                <!-- server location -->
+                <Label Content="Server location" HorizontalAlignment="Left" Margin="147.558,176.603,0,0" VerticalAlignment="Top" Width="200" Foreground="#FFDDDDDD"/>
+                <TextBox x:Name="ServerLocation" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Margin="147.558,202.205,0,0" Foreground="#FFDDDDDD" Background="#FF404040" TextChanged="OnChangeServerLocation" />
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
