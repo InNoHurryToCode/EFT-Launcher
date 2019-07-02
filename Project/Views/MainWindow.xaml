@@ -10,8 +10,9 @@
         <!-- background -->
         <Image x:Name="Bg" Source="pack://siteoforigin:,,,/data/images/bg.png" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="730"/>
         <Image x:Name="BgAlpha" Source="pack://siteoforigin:,,,/data/images/bg_alpha.png" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="730"/>
-        
+
         <!-- message -->
+        <!-- code here -->
 
         <!-- settings -->
         <Label Content="Email" HorizontalAlignment="Left" Margin="306.8,90.4,0,0" VerticalAlignment="Top" Foreground="White" Height="25.6"/>
@@ -28,6 +29,16 @@
         <!-- start buttons -->
         <Button Content="Start Server" HorizontalAlignment="Left" Margin="503.593,394.6,0,0" VerticalAlignment="Top" Width="131" Height="32.8" Click="OnStartServer" FontSize="16" Background="#FF404040" Foreground="#FFDDDDDD" BorderBrush="#FFABADB3"/>
         <Button Content="Start Game" HorizontalAlignment="Left" Margin="306.8,394.6,0,0" VerticalAlignment="Top" Width="131" Height="32.8" Click="OnStartGame" FontSize="16" Background="#FF404040" Foreground="#FFDDDDDD" BorderBrush="#FFABADB3"/>
-
+        <DockPanel Margin="221.023,0,0,417.489">
+            <Menu DockPanel.Dock="Top" Height="24" Margin="0,0,4,0" Foreground="#FFDDDDDD" Background="#FF404040">
+                <MenuItem Header="Account" FontSize="12" Foreground="#FFDDDDDD" Background="#FF404040" Click="OnAccount" />
+                <MenuItem Header="Server" FontSize="12" Foreground="#FFDDDDDD" Background="#FF404040">
+                    <MenuItem Header="Connection" FontSize="12" Foreground="#FFDDDDDD" Background="#FF404040" Click="OnServerGeneral" />
+                    <MenuItem Header="Bots" FontSize="12" Foreground="#FFDDDDDD" Background="#FF404040" Click="OnServerBots" />
+                    <MenuItem Header="Weather" FontSize="12" Foreground="#FFDDDDDD" Background="#FF404040" Click="OnServerWeather" />
+                </MenuItem>
+                <MenuItem Header="Settings" FontSize="12" Foreground="#FFDDDDDD" Background="#FF404040" Click="OnSettings" />
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>

@@ -61,5 +61,30 @@ namespace Launcher
         {
             settings.SetBackendURL(BackendURL.Text);
         }
+
+        private void OnAccount(object sender, RoutedEventArgs e)
+        {
+            // code here
+        }
+
+        private void OnServerGeneral(object sender, RoutedEventArgs e)
+        {
+            // code here
+        }
+
+        private void OnServerBots(object sender, RoutedEventArgs e)
+        {
+            // code here
+        }
+
+        private void OnServerWeather(object sender, RoutedEventArgs e)
+        {
+            // code here
+        }
+
+        private void OnSettings(object sender, RoutedEventArgs e)
+        {
+            // code here
+        }
     }
 }
