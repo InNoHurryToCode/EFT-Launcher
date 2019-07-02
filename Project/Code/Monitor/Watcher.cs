@@ -6,32 +6,37 @@ namespace Launcher.Code.Monitor
 {
     public class Watcher
     {
-        private string executable = "";
+        public bool processAlive { get; private set; }
         private Timer monitor = null;
-        public bool processAlive = false;
+        private string executable = "";
 
         public Watcher(string executable)
         {
-            this.executable = executable;
+            this.executable = executable.Replace(".exe", "");
 
             monitor = new Timer(1000);
-            monitor.Elapsed += Monitor;
+            monitor.Elapsed += OnUpdate;
             monitor.AutoReset = true;
             monitor.Enabled = true;
         }
 
-        private void Monitor(Object source, ElapsedEventArgs e)
+        private void OnUpdate(Object source, ElapsedEventArgs e)
+        {
+            processAlive = IsProcessAlive();
+        }
+
+        public bool IsProcessAlive()
         {
             Process[] activeProcesses = Process.GetProcessesByName(executable);
 
             if (activeProcesses.Length > 0)
             {
-                processAlive = true;
+                return true;
             }
             else
             {
                 monitor.Enabled = false;
-                processAlive = false;
+                return false;
             }
         }
     }

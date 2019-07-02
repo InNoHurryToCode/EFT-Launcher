@@ -19,7 +19,7 @@ namespace Launcher.Code.Starter
 
         protected void Start()
         {
-            if (watcher.processAlive)
+            if (watcher.IsProcessAlive())
             {
                 return;
             }
