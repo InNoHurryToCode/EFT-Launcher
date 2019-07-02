@@ -11,7 +11,7 @@ namespace Launcher.Code.Starter
         public GameStarter(string filepath, string backendURL, string email, string password) : base(filepath, "EscapeFromTarkov.exe")
         {
             SetBackendURL(filepath, backendURL);
-            GenerateToken();
+            GenerateToken(email, password);
             Start();
         }
 
@@ -21,11 +21,13 @@ namespace Launcher.Code.Starter
             gameSettings.SetBackendURL(backendURL);
         }
 
-        private void GenerateToken()
+        private void GenerateToken(string email, string password)
         {
             // create a base token
             LoginToken loginToken = new LoginToken();
-            
+            loginToken.email = email;
+            loginToken.password = password;
+
             // calculate timestamp
             double secondsSince1970 = DateTime.Now.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
             loginToken.timestamp = (long)(Math.Floor(secondsSince1970 + 45)) ^ 698464131;
